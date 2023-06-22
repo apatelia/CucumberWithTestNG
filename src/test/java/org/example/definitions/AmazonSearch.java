@@ -23,8 +23,6 @@ public class AmazonSearch {
     @Before
     public void setUp() {
         driver = DriverManager.initializeDriver();
-
-        homePage = new HomePage(driver);
     }
 
     @After
@@ -34,6 +32,7 @@ public class AmazonSearch {
 
     @Given("user is on Amazon India home page")
     public void user_is_on_amazon_india_home_page() {
+        homePage = new HomePage(driver);
         homePage.goTo();
     }
 
@@ -56,7 +55,7 @@ public class AmazonSearch {
 
     @Then("user goes to the last search results page")
     public void user_goes_to_the_last_search_results_page() {
-        searchResultsPage.goToLastResultsPage();
+        searchResultsPage.goToSecondLastResultsPage();
     }
 
     @Then("user clicks on the last product on the page")
